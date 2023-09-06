@@ -18,9 +18,6 @@ namespace UpdateMailInfo
         {
             this.connectionString = connectionString;
         }
-        /*
-		 쿼리와 db의 컬럼명은 모두 지우거나 변경하였음.
-		 */
 
         // 기록된 문서번호 뒤부터 select해오는 쿼리
         public List<MsgProperties> selectDBInfo(int currentDocNumber)
@@ -35,10 +32,10 @@ namespace UpdateMailInfo
 					using (OleDbConnection connection = new OleDbConnection(connectionString))
 					{
 						connection.Open();
-						string sql = @"쿼리는 모두 삭제 했다.";						
+						string sql = @"셀렉쿼리";						
 						OleDbCommand command = new OleDbCommand(sql, connection);
 						command.Parameters.AddWithValue("@p1", currentDocNumber);
-						Log.Debug($"DBConnector.selectDBInfo - sql string = {sql}，currentDocNumber＝{currentDocNumber}");
+						Log.Debug($"DBConnector.selectDBInfo - sql string={sql}，currentDocNumber={currentDocNumber}");
 						OleDbDataReader reader = command.ExecuteReader();
 
 						Log.Information("DBConnector.selectDBInfo - connection success");
@@ -88,7 +85,7 @@ namespace UpdateMailInfo
 					{
 						connection.Open();
 
-						string sql = @"쿼리는 모두 삭제하였다.";
+						string sql = @"셀렉카운트";
 
 						OleDbCommand command = new OleDbCommand(sql, connection);
 						command.Parameters.AddWithValue("@p1", currentDocNumber);
@@ -131,7 +128,7 @@ namespace UpdateMailInfo
 				{
 					connection.Open();
 
-					string sql = @"쿼리는 모두 삭제하였다.";
+					string sql = @"업데이트트";
 
 					int orignatorLength = Int32.Parse(HandleConfiguration.configData["CONFIG_FILE_PARAM1"]);
 					int addresseeLength = Int32.Parse(HandleConfiguration.configData["CONFIG_FILE_PARAM2"]);
@@ -237,7 +234,7 @@ namespace UpdateMailInfo
 						int firstDocNumber = Int32.Parse(firstDocNumberString);
 						int lastDocNumber = Int32.Parse(lastDocNumberString);
 
-						string sql = @"쿼리는 모두 삭제하였다.";
+						string sql = @"셀렉쿼리";
 
 						OleDbCommand command = new OleDbCommand(sql, connection);
 						command.Parameters.AddWithValue("@p1", firstDocNumber);
