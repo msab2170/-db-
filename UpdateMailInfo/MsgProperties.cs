@@ -22,9 +22,8 @@ namespace UpdateMailInfo
 
         public override string ToString()
         {
-            return $"MsgProperties - DocNumber = {DocNumber + ""}, FullPath = {FullPath}, " +
-                $"Originator = {Originator + ""}, Addressee = {Addressee + ""}, CC = {CC + ""}, BCC = {BCC + ""}, " +
-                $"SentDate = {SentDate + ""}, ReceivedDate = {ReceivedDate + ""}, Version = {Version + ""}";
+            return $"MsgProperties=DocNumber:{DocNumber}, FullPath:{FullPath}, Originator:{Originator}, Addressee:{Addressee}, CC:{CC}, BCC:{BCC}, " +
+                $"SentDate:{SentDate}, ReceivedDate:{ReceivedDate}, Version:{Version}";
         }
     }
 }
