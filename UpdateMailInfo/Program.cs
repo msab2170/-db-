@@ -19,11 +19,6 @@ namespace UpdateMailInfo
             string[] todayYMD = today.Split('-');
             string logFilePath = $"logs/{todayYMD[0]}/{todayYMD[0]}-{todayYMD[1]}/log-.txt";
 
-            // 로그파일을 logs 폴더 내 저장, 간격:일별, 파일갯수 제한 : 7
-            // 최소 출력은 default가 information이라
-            // MinimumLevel.Information()을 사용할 필요는 없으나
-            // 수정할 상황 발생시 용이하도록 명시
-
             HandleConfiguration hc = new HandleConfiguration(); // 설정 정보 그릇
             hc.readConfig();
 
